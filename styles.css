@@ -1,0 +1,95 @@
+html {
+  font-size: 62.5;
+  box-sizing: border-box;
+  --color1: darkgreen;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+form,
+input,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: yellow;
+  font-family: cursive;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 0.8rem rgb(0, 0, 0, 0.3);
+  padding: 2rem;
+  margin: 1rem; /*this is important because it adds margin around the form when the viewport size is decreased*/
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.score {
+  align-self: flex-end;
+  font-size: 2rem;
+  color: var(--color1);
+}
+
+.input {
+  width: 100%;
+  display: block;
+  box-sizing: border-box; /*i used to think the border-box had to go on the ancestor. it actually needs to be placed on the children*/
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 0.4rem solid var(--color1);
+  text-align: center;
+  color: var(--color1);
+}
+
+.input::placeholder {
+  color: lightgray;
+  font-family: cursive; /*i still dont have an understanding of inheritance. i thought that placing cursive on the body element would pass it to the children... Answer: buttons dont inherit styling*/
+}
+
+.input:hover {
+  border: 0.4rem solid rgb(1, 162, 1);
+  box-shadow: 0rem 0rem 0.9rem darkgreen;
+  filter: brightness(0.9);
+}
+
+.btn {
+  border: none;
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: var(--color1);
+  color: white;
+  border-radius: 0.7rem;
+  font-family: cursive;
+  box-shadow: -0.5rem 0.5rem 0.8rem rgba(0, 0, 0, 0.4);
+  cursor: pointer; /*this is nice for buttons*/
+}
+
+.btn:hover {
+  filter: brightness(
+    0.9
+  ); /*this is nice for buttons instead of using background color to darker shade*/
+}

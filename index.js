@@ -7,7 +7,7 @@ const formEl = document.getElementById("form");
 const inputEl = document.getElementById("input");
 const scoreEl = document.getElementById("score");
 
-let score = JSON.parse(localStorage.getItem("score"));
+let score = JSON.parse(sessionStorage.getItem("score"));
 if (!score) {
   score = 0;
 }
@@ -27,5 +27,11 @@ formEl.addEventListener("submit", () => {
 });
 
 function updateLocalStorage() {
-  localStorage.setItem("score", JSON.stringify(score));
+  sessionStorage.setItem("score", JSON.stringify(score));
 }
+
+// Remove saved data from sessionStorage
+sessionStorage.removeItem("score");
+
+// Remove all saved data from sessionStorage
+sessionStorage.clear();
